@@ -267,6 +267,7 @@
 	// [].forEach.call(card, function(card) {
 	// 	card.addEventListener('click', scaleCard, false);
 	// });
+        
 
 	}); // end of document ready
 })(jQuery); // end of jQuery name space
