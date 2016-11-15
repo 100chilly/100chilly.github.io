@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src='../js/jquery/jquery.js?ver=1.11.2'></script>
-    <script src='../js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
-    <script src="../js/twitchstream.js"></script>
-    <script src='../js/jquery/ui/core.min.js?ver=1.11.4'></script>
-    <script src='../js/jquery/ui/widget.min.js?ver=1.11.4'></script>
-    <script src='../js/jquery/ui/position.min.js?ver=1.11.4'></script>
-    <script src='../js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
-    <script src='../js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
-    <script src='../js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
-    <script src='../js/jquery/ui/menu.min.js?ver=1.11.4'></script>
-    <script src='../js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
-    <script src='../js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
-    <script src='../js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
-    <script src='../js/jquery/ui/button.min.js?ver=1.11.4'></script>
-    <script src='../js/jquery/ui/dialog.min.js?ver=1.11.4'></script>
-    <script src='../js/init.js'></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <meta name="theme-color" content="#000">
@@ -61,24 +45,14 @@
         <div class="row" id="content" role="main">
             <h1 class="page-title white-text"><span class="stitle"></span></h1>
             <!-- Player -->
-                <div id="player">
-                        <object type="application/x-shockwave-flash"
-                                height="450" width="70%"
-                                class="live_embed_player"
-                                id="live_embed_player_flash" data=""
-                                bgcolor="#181818">
-                            <param name="allowFullScreen" value="true"/>
-                            <param name="allowScriptAccess" value="always"/>
-                            <param name="allowNetworking" value="all"/>
-                            <param name="movie"
-                                   value="http://www.twitch.tv/widgets/live_embed_player.swf"/>
-                            <param name="flashvars"
-                                   value="hostname=www.twitch.tv&auto_play=false&start_volume=25"/>
-                            <param name="wmode" value="opaque"/>
-                        </object>
-                        <iframe width="70%" height="450" src="" frameborder="0" class="live_embed_player" id="hitbox_player" allowfullscreen></iframe>
-                        <iframe frameborder="0" scrolling="no" id="chat_embed" src="" height="450" width="29%"></iframe>
-              </div>
+               <div id="player">
+                <div class="col-left">
+                    <iframe width="70%" height="450" src="" frameborder="0" scrolling="no" class="live_embed_player" id="twitch_player" allowfullscreen></iframe>
+                </div>
+                <div class="col-right">
+                    <iframe frameborder="0" scrolling="no" id="chat_embed" src="" height="450" width="29%"></iframe>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -147,11 +121,27 @@
 
 <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src='../js/jquery/jquery.js?ver=1.11.2'></script>
+<script src='../js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script src='../js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script src='../js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script src='../js/jquery/ui/position.min.js?ver=1.11.4'></script>
+<script src='../js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
+<script src='../js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
+<script src='../js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
+<script src='../js/jquery/ui/menu.min.js?ver=1.11.4'></script>
+<script src='../js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
+<script src='../js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
+<script src='../js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
+<script src='../js/jquery/ui/button.min.js?ver=1.11.4'></script>
+<script src='../js/jquery/ui/dialog.min.js?ver=1.11.4'></script>
+<script src='../js/init.js'></script>
 <script src="../js/materialize.js"></script>
 <script src="../js/init.js"></script>
 <script src="../js/init2.js"></script>
 <script src="../min/plugin-min.js"></script>
 <script src="../min/custom-min.js"></script>
+<script src="../js/twitchstream.js"></script>
 
 </body>
 </html>
