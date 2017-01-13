@@ -1,5 +1,5 @@
 # 100chilly.github.io
-My public repository for my persoanl site. :smiley:
+My public repository for my personal site. :smiley:
 
 ## Offical URLs
 
