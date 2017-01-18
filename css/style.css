@@ -54,6 +54,7 @@
     font-size: 6.0em;
     font-weight: 100;
     color: #ff7100;
+    text-shadow: 2px 2px 4px;
 }
 
 .brand-logo {
@@ -67,7 +68,7 @@
     letter-spacing: 7px;
 }
 
-.text_h2 {font-weight: 100;margin-bottom: 4%; line-height: 4.5rem; color: #00b3f7;}
+.text_h2 {font-weight: 100;margin-bottom: 4%; line-height: 4.5rem; color: #00b3f7; text-shadow: 2px 2px 4px; }
 
 .span_h2 {font-weight: 300;color: #ff0000;}
 
@@ -75,7 +76,10 @@
     color: #0a8bd6;
 }
 
-.text_b{color: #029e4c;}
+.text_b {
+    text-shadow: 2px 2px 4px #029e4c;
+    color: #029e4c;
+}
 
 .in{font-weight: 400 !important; font-style: normal !important;}
 
