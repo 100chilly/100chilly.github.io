@@ -5,22 +5,43 @@
  * Thanks for MaterializeCSS.com
  */
 
-.default_color{background-color: #2196F3 !important}
+#top {
+    background-color: #414a4c;
+}
 
-.default_color_text{color: #2196F3 !important}
+#top2 {
+    background-color: #414a4c;
+}
+
+.default_color{
+    background-color: #000 !important
+}
+
+.default_color_text{
+    color: #FFF !important
+}
 
 .icon-block {
     padding: 0 15px;
 }
 
-#intro, #work, #team {padding-top: 4rem;}
+#intro, #work, #team {
+    padding-top: 4rem;
+}
+
+#index-banner2 {
+    min-height: 632px;
+    max-height: 864px;
+    position: relative;
+}
 
 
 #index-banner {
     min-height: 632px;
     max-height: 864px;
     position: relative;
-    background-color: #2196F3;
+    background-image: url(https://i.imgur.com/xbSkHZq.jpg);
+    background-size: cover;
 }
 
 #nav_f{
@@ -32,12 +53,12 @@
     padding: 15% 0;
     font-size: 6.0em;
     font-weight: 100;
-    color:white;
+    color: #ff7100;
 }
 
-.brand-logo{
+.brand-logo {
     position: absolute;
-    color: #fff;
+    color: #FFF;
     display: inline-block;
     font-size: 2.1rem;
     font-style: normal;
@@ -46,11 +67,15 @@
     letter-spacing: 7px;
 }
 
-.text_h2 {font-weight: 100;margin-bottom: 4%; line-height: 4.5rem;}
+.text_h2 {font-weight: 100;margin-bottom: 4%; line-height: 4.5rem; color: #00b3f7;}
 
-.span_h2 {font-weight: 300;color: #2196F3;}
+.span_h2 {font-weight: 300;color: #ff0000;}
 
-.text_b{color: #2196F3;}
+.importanttext {
+    color: #0a8bd6;
+}
+
+.text_b{color: #029e4c;}
 
 .in{font-weight: 400 !important; font-style: normal !important;}
 
@@ -59,17 +84,17 @@
     font-size: 7rem;
     display: block;
 }
-.card-content a {color: #2196F3;}
 
-.card-content a:hover {color: #2196F3;}
+.card-content a {color: #FFF;}
 
-#work, #team{background: rgb(247, 247, 247);}
+.card-content a:hover {color: #FFF;}
+
 
 .text_pink{color:#EF9A9A;}
 
 nav ul a {
     font-size: 1.2rem;
-    color: #FFF;
+    color: #0a8bd6;
     letter-spacing: 2px;
     display: block;
     font-weight: 300;
@@ -95,7 +120,7 @@ nav ul a {
     transform: translateY(-50%);
     height: 90%;
     width: 1px;
-    background-color: #aebcb9;
+    background-color: #414a4c;
 }
 
 .cd-headline.type .cd-words-wrapper.waiting::after {
@@ -104,7 +129,7 @@ nav ul a {
     animation: cd-pulse 1s infinite;
 }
 .cd-headline.type .cd-words-wrapper.selected {
-    background-color: #FFF;
+    background-color: transparent;
 }
 
 .cd-headline.type .cd-words-wrapper.selected::after {
@@ -112,7 +137,7 @@ nav ul a {
 }
 
 .cd-headline.type .cd-words-wrapper.selected b {
-    color: #2196F3;
+    color: #000;
 }
 
 .cd-headline.type b {
@@ -262,4 +287,21 @@ nav a.button-collapse {
 
 footer.page-footer {
     margin-top: 0px !important;
+    background-color: #000;
+}
+
+.list_iframe {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.list_iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

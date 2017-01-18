@@ -9,6 +9,7 @@
     <!-- CSS  -->
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
+    <link href="css/style.css" type="text/css" rel="stylesheet" >
 </head>
 <body id="top" class="scrollspy">
 
@@ -26,7 +27,7 @@
     <nav id="nav_f" class="default_color" role="navigation">
         <div class="container">
             <div class="nav-wrapper">
-            <a href="./" id="logo-container" class="brand-logo">100chilly</a>
+            <a href="./" id="logo-container" class="brand-logo" style="color: #0a8bd6;">100chilly</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#intro">Who?</a></li>
                     <li><a href="#works">Projects</a></li>
@@ -43,7 +44,7 @@
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="./watch/">Watch</a></li>
                 </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="importanttext mdi-navigation-menu"></i></a>
             </div>
         </div>
     </nav>
@@ -59,25 +60,26 @@
                 <b>designing.</b>
                 <b>developing.</b>
                 <b>gaming.</b>
+                <b>anime.</b>
             </span>
         </h1>
     </div>
 </div>
 
-<div class="parallax-container">
-    <div class="parallax"><img src="img/backimg.png"></div>
-</div>
-
 <!--Intro and service-->
-<div id="intro" class="section scrollspy black white-text">
+<div id="intro" class="section scrollspy">
     <div class="container">
         <div class="row">
             <div  class="col s12">
-                <h4 class="center header text_h2"> Hi Everyone! My name is Quinten, or like my friends call me <span class="span_h2 white-text">100chilly</span>. I am a <span class="span_h2 white-text">Web Developer/Designer</span>, <span class="span_h2 white-text">Programmer</span>, and a <span class="span_h2 white-text">Gamer.</span></h4>
-                <h5 class="center text_h2">I've worked on a ton of stuff over the course of <span class="span_h2 white-text">twenty years</span> on Earth. <span class="span_h2 white-text">Below are some of my works, both past and current.</span></h5>
+                <h4 class="center header text_h2"> Hi Everyone! My name is Quinten, or like my friends call me <span class="span_h2">100chilly</span>. I am a <span class="span_h2">Web Developer/Designer</span>, <span class="span_h2">Programmer</span>, and a <span class="span_h2">Gamer.</span></h4>
+                <h5 class="center text_h2">I've worked on a ton of stuff over the course of <span class="span_h2">twenty years</span> on Earth. <span class="span_h2">Below are some of my works, both past and current.</span></h5>
             </div>
         </div>
     </div>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="img/parallax0.jpg"></div>
 </div>
 
 <!--Work-->
@@ -142,24 +144,24 @@
     <div class="container">
         <h2 class="header text_b"> Social </h2>
             <div class="col s12 m3">
-                <div class="card card-avatar black">
+                <div class="card card-avatar">
                     <div class="waves-effect waves-block waves-light">
                         <img class="activator" src="img/100chilly.png">
                     </div>
                     <center><div class="card-content">
-                        <span class="card-title activator white-text">Quinten (100chilly) <br/>
+                        <span class="card-title activator black-text">Quinten (100chilly) <br/>
                             <small><em><a class="blue-text" href="#">Site Founder/Owner</a></em></small></span>
                         <p>
-                            <a class="white-text" href="https://steamcommunity.com/id/100chilly/">
+                            <a class="black-text" href="https://steamcommunity.com/id/100chilly/">
                                 <i class="fa fa-steam-square"></i>
                             </a>
-                            <a class="white-text" href="https://twitter.com/100chilly">
+                            <a class="black-text" href="https://twitter.com/100chilly">
                                 <i class="fa fa-twitter-square"></i>
                             </a>
-                            <a class="white-text" href="https://www.twitch.tv/100chilly/">
+                            <a class="black-text" href="https://www.twitch.tv/100chilly/">
                                 <i class="fa fa-twitch"></i>
                             </a>
-                            <a class="white-text" href="https://github.com/100chilly/">
+                            <a class="black-text" href="https://github.com/100chilly/">
                                 <i class="fa fa-github-square"></i>
                             </a>
                         </p>
@@ -175,14 +177,22 @@
 
 <div class="section scrollspy" id="anime">
     <div class="container">
-    <h2 class="header text_b">Anime Tracker/List</h2>
-    <div class="container" style="position: relative; padding-bottom: 50%; padding-top: 35px; height: 0; overflow: hidden;">
-        <iframe src="https://anilist.co/user/100chilly/animelist" style="position: absolute; top:0; left: 0; width: 100%; height: 100%;"></iframe>
+        <h2 class="header text_b"> Anime List </h2>
+        <div class="row">
+            <div class="list_iframe">
+                <iframe src="https://anilist.co/user/100chilly/animelist" height="400" width="680"  style="border:0px;float:middle;" sandbox="allow-pointer-lock allow-same-origin allow-scripts "></iframe>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="img/backimg.png"></div>
+</div>
+
 <!--Footer-->
-<footer id="contact" class="page-footer scrollspy black">
+<footer id="contact" class="page-footer scrollspy">
     <div class="container">  
         <div class="row">
             <div class="col l6 s12">
@@ -228,7 +238,7 @@
         </div>
     <div class="footer-copyright default_color">
         <div class="container">
-            Made by <a class="white-text" href="https://www.100chilly.online/">100chilly</a> (&copy; 100chilly)
+            Made by <a class="importanttext" href="https://www.100chilly.online/">100chilly</a> (&copy; 100chilly)
         </div>
     </div>
 </footer>
