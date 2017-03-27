@@ -1,385 +1,296 @@
-/* global NO_PLAYER */
+// Title: Twitch Stream List V2
+// Version 1.0
+// Author: Jari Senhorst
+// Website: http://jarisenhorst.com
+// Note: This script uses html data from the old Twitch Stream List 
+// script that was modded by 100chilly and Kweh for use on the Qubed Q3 site and related projects.
+//
+// This script is basically a rewrite of Noah Shrader's Twitch Stream List script, 
+// but this script works with Twitch API V5.
 
-// Title: Twitch Stream List
-// Version: 2.5
-// Author: Noah Shrader
-// Website: http://www.noahshrader.com
-// Modded by Kweh and 100chilly for use on the Qubed Q3 site.
+/////// Config variables ////////
+var mainUserID = "26833679"; //The userID to pull the followers from
+var mainClientID = "3r9xxl9vect563p9npg9x70u8gwoy9v"; //The userID's Client-ID
+var mainAcceptToken = "application/vnd.twitchtv.v5+json"; //The accept token
+var twitchAPIUrl = "https://api.twitch.tv/kraken"; //The Twitch API URL to use
+var updateRate = 60000; //The refresh rate of the script (default 60000 milliseconds, 1 minute)
+var twitchElementName = "#twitch_player"; //The name of the Twitch player element
+var twitchChatElementName = "#chat_embed"; //The name of the Twitch chat element
 
+/////// Other variables ////////
+var userList; //The raw follower data, as received from Twitch
+var userDefList = new Array(); //The list with our custom user definition objects
+var twitchPlayer; //The variable that will hold the twitch player from our watch page
+var twitchChat; //The variable that will hold our embedded Twitch chat element
 
-var twitchUser = "100chilly",
-    twitchLoad = function(url, callback) {
-        jQuery.ajax({
-            url: 'https://api.twitch.tv/kraken/' + url,
-            dataType: 'json',
-            headers: {
-                "Client-ID": "3r9xxl9vect563p9npg9x70u8gwoy9v",
-                "Accept": "application/vnd.twitchtv.v3+json"
-            },
-            success: callback 
-        });
-    },
-    Page = {
-               // This is where the DOM manipulation happens. You may call it the view.
-        NO_PLAYER: 0,
-        TWITCH_PLAYER: 1,
-        currentPlayer: this.NO_PLAYER,
-        currentUser: "",
-        ignoreNextHash: false,
-        initialized: false,
-        player: jQuery("#twitch_player"),
-        chat: jQuery("#chat_embed"),
-        hidePlayer: function() {
-            this.currentPlayer = this.NO_PLAYER;
-            this.currentUser = "";
-            // this prevents the hash to get removed when initially loading the page
-            if(this.initialized) {
-                if(window.location.hash.length > 1) {
-                    this.ignoreNextHash = true;
-                }
-                window.location.hash = "";
-            }
-            this.chat.hide();
-            this.chat.attr("src", "");
-            this.player.hide();
-            this.player.attr("src", "");
-        },
-        showPlayer: function(user) {
-            jQuery("#player").hide();
-            if(!user) {
-                this.hidePlayer();
-                return;
-            }
-            if(this.currentUser !== user.name) {
-                this.currentUser = user.name;
-                if(window.location.hash !== "#"+user.name) {
-                    this.ignoreNextHash = true;
-                    window.location.hash = "#"+user.name;
-                }
-
-                if(this.currentPlayer === this.NO_PLAYER) {
-                    this.chat.show();
-                    this.player.show();
-                }
-
-                // show the player matching the current user, twitch player preferred
-			if(user.twitch && (!user.live() || user.tlive)) {
-                this.player.attr('src', 'https://player.twitch.tv/?channel=' + user.twitch);
-                this.chat.attr("src","https://www.twitch.tv/" + user.twitch + "/chat?popout=");
-                this.currentPlayer = this.TWITCH_PLAYER;
-			}
-                else {
-                    this.hidePlayer();
-                    return;
-                }
-                this.setTitle(user);
-
-                var that = this;
-                jQuery('#player').show(function() {
-                    that.sizePlayer();
-                });
-            }
-        },
-        sizePlayer: function() {
-            // need to use #player, as the flash object has no width at that point in time, could do a loop to wait for it instead, but this results in the same value
-            var vidwidth = jQuery("#player").width();
-            var swidth = jQuery(".streaming").width();
-
-            if(swidth >= '1074') {
-                vidwidth = Math.round(vidwidth *0.7);
-            }
-            // 31 is the height of the twitch player control bar
-            var setheight = Math.round((vidwidth / 16) * 9);
-
-            if(swidth < '1074') {
-                this.chat.css("width", "100%");
-                this.chat.css("height", "450px");
-            }
-            else {
-                this.chat.css( "width", "29%" );
-                this.chat.css("height", setheight+"px");
-            }
-
-            this.player.css({ height: setheight+"px", 'margin-bottom': '0'});
-            this.player.attr("height", setheight+"");
-            if(swidth >= '1074') {
-                this.chat.css("height", setheight+"px");
-            }
-        },
-        // Adds the little user card
-        createUser: function(user) {
-            var viewers = 'Offline',
-                game = 'Last played: ',
-                liveClass = 'offline';
-            if(user.live()) {
-                viewers = user.viewers + ' viewers';
-                game = 'Playing: ';
-                liveClass = 'online';
-            }
-            jQuery('#members').append('<div class="col s6 l4"><a class="member black amber-text text-darken-4' + liveClass + '" id="' + user.name + '" href="#' + user.name + '">');
-
-            jQuery('#' + user.name).append('<img class="circle" src="' + user.avatar + '" alt="' + user.name + '">');
-            jQuery('#' + user.name).append('<p class="viewers">' + viewers + '</p>');
-            jQuery('#' + user.name).append('<h6 class="member-name">' + user.name + '</h6>');
-            jQuery('#' + user.name).append('<p class="game">' + game + user.game + '</p>');
-            jQuery('#' + user.name).append('</a></div>');
-        },
-        // Updates the content of the little user card
-        updateUser: function(user) {
-            var userElement = jQuery("#" + user.name);
-            if(userElement.html()) {
-                var userLive = userElement.hasClass("online"),
-                    viewers = 'Offline',
-                    game = 'Last played: ',
-                    liveClass = 'offline';
-
-                if(user.live()) {
-                    viewers = user.viewers + ' viewers';
-                    game = 'Playing: ';
-                    liveClass = 'online';
-                }
-
-                // update title if the state has changed and this user is currently being displayed
-                if(this.currentUser === user.name) {
-                    this.setTitle(user);
-                }
-
-                if(userLive && !user.live()) {
-                    userElement.removeClass("online");
-                }
-                else if(!userLive && user.live()) {
-                    userElement.removeClass("offline");
-                }
-                userElement.addClass(liveClass);
-                userElement.attr("src", user.avatar);
-                if(user.live() || user.live() !== userLive) {
-                    jQuery('#'+user.name+' .viewers').html(viewers);
-                    jQuery('#'+user.name+' .game').html(game+user.game);
-                }
-            }
-            else {
-                this.createUser(user);
-            }
-        },
-        // Set the title for the given user
-        setTitle: function(user) {
-            var title = user.live() ? 'Live: ' + user.name + ' playing ' + user.game : user.name + ' is out and about.';
-            jQuery('span.stitle').html(title);
-        }
-    },
-    UserList = {
-        // Some would call this the model and/or controller
-        list: [],
-        isLive: function() {
-            return this.list.some(function(user) {
-                return user.live();
-            });
-        },
-        getUserByName: function(name) {
-            name = name.toLowerCase();
-            var retUser, cond;
-            this.list.some(function(user) {
-                cond = user.name.toLowerCase() === name;
-                if(cond) {
-                    retUser = user;
-                }
-                return cond;
-            });
-            return retUser;
-        },
-        getTwitchUsers: function() {
-            var ret = [];
-            this.list.forEach(function(user) {
-                if(user.twitch !== "") {
-                    ret.push(user);
-                }
-            });
-            return ret;
-        },
-        getTwitchUserByName: function(name) {
-            var retUser, cond;
-            this.getTwitchUsers().some(function(user) {
-                cond = user.twitch.toLowerCase() === name;
-                if(cond) {
-                    retUser = user;
-                }
-                return cond;
-            });
-            return retUser;
-        },
-        refresh: function() {
-            this.updateTwitch(this.getTwitchUsers());
-        },
-        // Bulk updates all the twitch users, the argument is a comma separated list of their usernames.
-        updateTwitch: function(users) {
-            var user, that = this;
-            users.forEach(function(user) {
-                user.tlive = false;
-            });
-            twitchLoad('streams?channel=' + users.join(","), function(d) {
-                if(d.streams.length>0) {
-                    d.streams.forEach(function(stream) {
-                        user = this.getTwitchUserByName(stream.channel.name);
-                        if(!user.live()) {
-                            user.game = stream.game;
-                            user.viewers = stream.viewers;
-                        }
-                        user.tlive = true;
-                        if(user.name === User.prototype.name)
-                            user.name = stream.channel.display_name;
-                        if(stream.channel.logo)
-                            user.avatar = stream.channel.logo;
-
-                        Page.updateUser(user);
-                        user.ready = true;
-                    }, that);
-                }
-
-                users.forEach(function(user) {
-                    if(!user.tlive) {
-                        this.getTwitchUserInfo(user);
-                    }
-                    else if(this.onready && this.ready()) {
-                        this.onready();
-                    }
-                }, that);
-            });
-        },
-        getTwitchUserInfo: function(user) {
-            var that = this;
-            twitchLoad('channels/' + user.twitch, function(d) {
-                if(typeof d === 'object') {
-                    if(!user.live()) {
-                        if(d.game !== null) {
-                            user.game = d.game;
-                        }
-                        user.viewers = 0;
-                    }
-                    if(user.name === User.prototype.name)
-                        user.name = d.display_name;
-                    if(d.logo)
-                        user.avatar = d.logo;
-
-                    Page.updateUser(user);
-                    user.ready = true;
-
-                    if(that.onready && that.ready()) that.onready();
-                }
-            });
-        },
-        ready: function() {
-            return this.list.every(function(user) {
-                return user.ready;
-            });
-        },
-        onready: null
-    };
-
-/*
- USER
- The only object type with an acutal prototype and instatiation of this whole thing
- Every user is represented by one of these.
- */
-// the user's twitch username
-User.prototype.twitch = "";
-// true, if the user is live on twitch
-User.prototype.tlive = false;
-// An URL pointing to an avatar image representing this user
-User.prototype.avatar = "../img/fYdty6yd.png";
-// The displayed name for this user
-User.prototype.name = "Unknown";
-// Number of viewers this user currently has. Can only be for one source (case where a user is live on two services should be rare enough to ignore it for now)
-User.prototype.viewers = 0;
-// The game the user has last played or is currently playing
-User.prototype.game = "";
-// True if at least the name of the user has been set
-User.prototype.ready = false;
-function User() {
-    //void
-}
-// Returns true if the user is live on any service
-User.prototype.live = function() {
-    return this.tlive;
-};
-
-// Returns the user's twitch username, so we can conveniently .join all the users for the twitchrequest.
-User.prototype.toString = function() {
-    return this.twitch;
-};
-
-jQuery(document).ready(function( $ ) {
-    Page.hidePlayer();
-
-    /*
-     Complicated initialization path.
-     First the twitch users get added.
-     And after all the twitch user's details have been added, the default state for the displayed player is chosen.
-     */
-    UserList.onready = function() {
-        // If the user entered the page with a user already selected, directly show that user
-        if(window.location.hash.length > 1) {
-            Page.showPlayer(UserList.getUserByName(window.location.hash.slice(1)));
-        }
-        else {
-            var allOffline = UserList.list.every(function(user) {
-                return !user.live();
-            });
-            if(allOffline || UserList.getTwitchUserByName("qubed_q3").live()) {
-                Page.showPlayer(UserList.getTwitchUserByName("qubed_q3"));
-            }
-            else {
-                UserList.list.some(function(user) {
-                    if(user.live())
-                        Page.showPlayer(user);
-                    return user.live();
-                });
-            }
-        }
-        Page.initialized = true;
-        // Thanks, we're done here (else updates will make the page run through this again)
-        UserList.onready = null;
-    };
-    twitchLoad("users/"+ twitchUser + "/follows/channels?limit=250", function(data) {
-        if(data && data.follows.length > 0) {
-            // Now, load the twitch users (we're coming from methods invoked async around line 420)
-            data.follows.forEach(function(user, i, a) {
-                var newUser, existingUser = UserList.getUserByName(user.channel.name);
-                if(!existingUser) {
-                    newUser = new User();
-                    newUser.twitch = user.channel.name;
-                    UserList.list.push(newUser);
-                }
-                else {
-                    UserList.getUserByName(user.channel.name).twitch = user.channel.name;
-                }
-
-                if(i+1 === a.length) {
-                    // Load all twitch user's user data plus their livestatus
-                    UserList.updateTwitch(UserList.getTwitchUsers());
-                }
-            });
-        }
-    });
-
-    // Display the player of the streamer the user just selected
-    $(window).on("hashchange", function() {
-        if(!Page.ignoreNextHash) {
-            Page.showPlayer(UserList.getUserByName(window.location.hash.slice(1)));
-        }
-        else {
-            Page.ignoreNextHash = false;
-        }
-    });
-
-    // Window resize event - for dynamic sizing of stream+chat frames
-    $(window).on("resize", function(){
-        Page.sizePlayer();
-    });
-
-    // Updating loop
-    window.setInterval(function() {
-        if(UserList.ready() && Page.initialized)
-            UserList.refresh();
-    }, 60000);
-
+/////// Script start ////////
+jQuery(document).ready(function( $ ) 
+{
+	findPlayerElement(); //Find the Twitch player element
+	populateUserList(); //Start the script by beginning at square one, populating the user list (the mainUserID's followers)
 });
+///////////////
+
+///
+// This function searches for the player elements on the page
+// and stores it in our correct variables.
+///
+function findPlayerElement()
+{
+	twitchPlayer = jQuery(twitchElementName);
+	twitchChat = jQuery(twitchChatElementName);
+}
+
+///
+// This function sends a request to Twitch for the mainUserID's followers, then
+// calls onUserListRetrieved with the received data.
+///
+function populateUserList()
+{
+	jQuery.ajax(
+	{
+		dataType: 'json',
+		headers:
+		{
+			"Client-ID": mainClientID,
+			"Accept": mainAcceptToken
+		},
+		type: 'GET',
+		contentType: 'application/json',
+		url: twitchAPIUrl + '/users/' + mainUserID + '/follows/channels?limit=100',
+		success: onUserListRetrieved
+	});
+	
+}
+
+///
+// This function should only be called by the request that was sent from populateUserList.
+// Upon receiving the requested data, it assigns the raw data to userList and starts other
+// needed tasks.
+///
+function onUserListRetrieved(data)
+{
+	userList = data['follows'];
+	setupUserDefinitions();
+	window.setInterval(scriptUpdate, updateRate);
+}
+
+///
+// This is the script's update loop. It's executed each x milliseconds (as specified on the
+// top, under the config variables)
+///
+function scriptUpdate()
+{
+	updateUserCards();
+}
+
+///
+// This function sets up the user definitions using our custom userDataDefinition objects. 
+// It uses the raw userList values for processing (these should have been retrieved upon
+// calling this function). It also populates the userDefList array with it for easy referencing 
+// later on in the script.
+///
+function setupUserDefinitions()
+{
+	for(var i = 0, len = userList.length; i < len; i++)
+	{
+		var channelData = userList[i]['channel'];
+		var uData = new userDataDefinition(channelData['display_name'], channelData['logo'], 0, channelData['game'], channelData['name'], channelData['_id']);
+		
+		userDefList.push(uData);
+		updateUserLiveStatus(uData);
+		userCardCreate(uData);
+	}
+	onUserOperationsFinished();
+}
+
+///
+// This function is called when setup of user data is completed. Here
+// we also initialize our page player.
+///
+function onUserOperationsFinished()
+{
+	var liveUsers = new Array();
+	for(var i = 0, len = userDefList.length; i < len; i++) { if(userDefList[i].isUserLive) liveUsers.push(userDefList[i]); } //Make a list of live users
+	
+	if(liveUsers.length == 0) //No live users, select a random offline user to show in the player
+	{
+		//We use userDefList instead of liveUsers, since liveUsers is empty!
+		var rnd = Math.floor(Math.random() * (userDefList.length - 1)); //Don't forget -1, otherwise we might get out of bounds issues
+		
+		showUserInPlayer(userDefList[rnd]);
+	}
+	else if(liveUsers.length == 1) //One live users, simply show just that user in the player
+	{
+		showUserInPlayer(liveUsers[0]); //Show the first and only entry in the player
+	}
+	else if(liveUsers.length > 1) //Multiple live users, select a random one to show
+	{
+		//Show one of the live streamers in the player
+		var rnd = Math.floor(Math.random() * (liveUsers.length - 1)); //Don't forget -1, otherwise we might get out of bounds issues
+		showUserInPlayer(liveUsers[rnd]);
+	}
+}
+
+///
+// This function shows a specific user in the player on the page
+///
+function showUserInPlayer(uData)
+{
+	twitchPlayer.attr('src', 'https://player.twitch.tv/?channel=' + uData.userName);
+	twitchChat.attr("src","https://www.twitch.tv/" + uData.userName + "/chat?popout=");
+}
+
+///
+// Updates the live status and stream data of a user
+///
+function updateUserLiveStatus(userdata)
+{
+	jQuery.ajax(
+	{
+		dataType: 'json',
+		headers:
+		{
+			"Client-ID": mainClientID,
+			"Accept": mainAcceptToken
+		},
+		type: 'GET',
+		contentType: 'application/json',
+		url: twitchAPIUrl + '/streams/' + userdata.userChannelID,
+		success: function(data)
+		{
+			if(data['stream'] == null) userdata.isUserLive = false;
+			else 
+			{
+				userdata.isUserLive = true;
+			}
+		}
+	});
+}
+
+///
+// Our custom user data object. This holds the most important data which we want to use throughout the script
+// to display or interpret certain information.
+///
+function userDataDefinition(name, avatar, viewers, game, username, chanID)
+{
+	this.displayName = name;
+	this.userName = username;
+	this.userAvatar = avatar;
+	this.userViewers = viewers;
+	this.userGame = game;
+	this.userChannelID = chanID;
+	
+	this.isUserLive = false;
+}
+
+///
+// This function updates all the existing user cards on the page using our userDefList 
+// with our custom userDataDefinition object.
+///
+function updateUserCards()
+{
+	for(var i = 0, len = userList.length; i < len; i++)
+	{
+		updateUserCard(userDefList[i]);
+	}
+}
+
+///
+// This function updates a single user card based on the userDataDefinition received.
+///
+function updateUserCard(userdata)
+{
+	updateUserLiveStatus(userdata); //Update the live status
+	
+	//Edit the card
+	var cardElement = jQuery("#" + userdata.userName);
+	if(cardElement.html())
+	{
+		var uLive = cardElement.hasClass("online");
+		var viewers = "Offline";
+		var game = "Last played: ";
+		var lClass = "offline";
+
+		//User is live
+		if(userdata.isUserLive == true)
+		{
+			viewers = userdata.viewers + " viewers";
+			game = "Playing: ";
+			lClass = "online";
+			
+			if(cardElement.hasClass("text-darken-4")) cardElement.removeClass("text-darken-4");
+		}
+		else //User is not live
+		{
+			if(!cardElement.hasClass("text-darken-4")) cardElement.addClass("text-darken-4");
+		}
+		
+		if(uLive && userdata.isUserLive == false) 
+		{
+			cardElement.removeClass("online");
+		}
+		else if(!uLive && userdata.isUserLive == true) 
+		{
+			cardElement.removeClass("offline");
+		}
+		
+		cardElement.addClass(lClass);
+		cardElement.attr("src", userdata.userAvatar);
+		
+		if(userdata.isUserLive == true || userdata.isUserLive !== uLive)
+		{
+			jQuery("#" + userdata.userName + "_viewers").html(viewers);
+			jQuery("#" + userdata.userName + "_game").html(game + userdata.userGame);
+		}
+	
+	}
+}
+
+///
+// Returns the userDataDefinition for the given channel ID
+///
+function getUserDefByChannelID(chanID)
+{
+	//Search for the correct userDef, return when found
+	for(var i = 0, len = userDefList.length; i < len; i++) { if(userDefList[i].userChannelID == chanID) return userDefList[i]; }
+	return -1; //When nothing is found, -1 will be returned
+}
+
+///
+// Called when a user card is clicked on the watch page.
+// We receive the clicked channel ID
+///
+function onUsercardClicked(uChanID)
+{
+	var uDef = getUserDefByChannelID(uChanID);
+	if(uDef == -1) console.log("[ERR]: There was an issue while pairing the channelID with the userDataDefinition.."); 
+	else showUserInPlayer(uDef);
+}
+
+///
+// Creates a user card on the page under the 'members' div.
+///
+function userCardCreate(userdata)
+{
+	var viewers = 'Offline',
+		game = 'Last played: ',
+		liveClass = 'offline',
+		textcol = "amber-text text-darken-4 ";
+		
+		if(userdata.isUserLive == true) 
+		{
+			viewers = userdata.userViewers + ' viewers';
+			game = 'Playing: ';
+			liveClass = 'online';
+			textcol = "amber-text ";
+		}
+		
+		jQuery('#members').append('<div class="col s6 l4"><a class="member black ' + textcol + liveClass + '" id="' + userdata.userName + '" onclick="onUsercardClicked(' + userdata.userChannelID + ')">');
+
+		jQuery('#' + userdata.userName).append('<img class="circle" src="' + userdata.userAvatar + '" alt="' + userdata.userName + '">');
+		jQuery('#' + userdata.userName).append('<p class="viewers" id="'+ userdata.userName + '_viewers">' + viewers + '</p>');
+		jQuery('#' + userdata.userName).append('<h6 class="member-name">' + userdata.userName + '</h6>');
+		jQuery('#' + userdata.userName).append('<p class="game" id="'+ userdata.userName + '_game">' + game + userdata.userGame + '</p>');
+		jQuery('#' + userdata.userName).append('</a></div>');
+}
