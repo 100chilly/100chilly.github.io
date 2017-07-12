@@ -6,11 +6,11 @@
  */
 
 #top {
-    background-color: #2E51A2;
+    background-color: #2D2D2D;
 }
 
 #top2 {
-    background-color: #2E51A2;
+    background-image: url(../img/WBR.jpg)
 }
 
 .default_color{
@@ -311,6 +311,12 @@ footer.page-footer {
 }
 
 .weeblist {
-    max-width: 100%;
-    height: auto;
+    max-width:100%;
+    max-height:50%;
+}
+
+.weeblisttext {
+    position: static;
+    width: 100%;
+    text-align: center;
 }
