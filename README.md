@@ -10,8 +10,8 @@ My public repository for my personal site. :smiley:
 
 ### Offical Web URLs
 
-[https://www.100chilly.space](https://www.100chilly.space/)
+[https://www.100chilly.website](https://www.100chilly.website/)
 
-[http://github.100chilly.space](http://github.100chilly.space/)
+[http://github.100chilly.website](http://github.100chilly.website/)
 
 [https://100chilly.github.io/](https://100chilly.github.io/)
