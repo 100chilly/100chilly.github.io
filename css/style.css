@@ -40,7 +40,7 @@
     min-height: 632px;
     max-height: 864px;
     position: relative;
-    background-image: url(https://i.imgur.com/kNESPNq.jpg);
+    background-image: url(https://i.imgur.com/5TAbSM2.png);
     background-size: cover;
 }
 
@@ -141,7 +141,7 @@ nav ul a {
 }
 
 .cd-headline.type .cd-words-wrapper.selected b {
-    color: #000;
+    color: #FF0007;
 }
 
 .cd-headline.type b {
