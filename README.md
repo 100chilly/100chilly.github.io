@@ -8,7 +8,7 @@ My public repository for my personal site. :smiley:
 3. **[jQuery](https://github.com/jquery/jquery)**
 4. **Friends and Supporters** from various communities.
 
-### Offical Web URLs
+### Official Web URLs
 
 [https://www.100chilly.website](https://www.100chilly.website/)
 
