@@ -28,11 +28,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
     
     <!-- CSS  -->
+    <link href="libraries/materialize/materialize.min.css" type="text/css" rel="stylesheet">
+    <link href="libraries/normalize/normalize.css" type="text/css" rel="stylesheet">
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
     <link href="css/style-min.css" type="text/css" rel="stylesheet" >
     <script src="https://kit.fontawesome.com/c3ff3e7776.js" crossorigin="anonymous"></script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body id="top" class="scrollspy">
@@ -345,6 +348,24 @@
     <div class="parallax"><img src="img/parallax4.png"></div>
 </div>
 
+<div class="section scrollspy" id="friends">
+    <div class="container">
+        <div class="carousel carousel-slider" id="imageGallery">
+            <?php
+            $directory = './imagesCarousel';
+            $serverPath = '/imagesCarousel/';
+            $tagStart = '<a class=\'carousel-item\'><img class=\'imageElement\' src=\'';
+                                                         $tagEnd = '\'></a>';
+            $files = array_diff(scandir($directory), array('..', '.'));
+            foreach($files as $file){
+            echo $tagStart . $serverPath . $file . $tagEnd;
+            }
+
+            ?>
+        </div>
+    </div>
+</div>
+
 <!--Footer-->
 <<footer id="contact" class="page-footer scrollspy">
     <div class="container">  
@@ -399,13 +420,13 @@
 
 
     <!--  Scripts-->
-    <script defer src='js/jquery-3.5.0.min.js'></script>
-    <script defer src='js/jquery-migrate-3.1.0.min.js'></script>
-    <script defer src='js/jquery-ui.min.js'></script>
-    <!--<script defer src="js/materialize.js"></script>-->
-    <!--<script defer src="js/init.js"></script>-->
+    <script defer src="libraries/jquery/jquery-3.5.1.min.js"></script>
+    <script defer src="libraries/materialize/materialize.min.js"></script>
+
     <script defer src="min/plugin-min.js"></script>
-    <script defer src="min/custom-min.js"></script>
+
+    <script defer src="js/init.js"></script>
     <script defer src="js/age.js"></script>
+    <script defer src="js/carousel.js"></script>
     </body>
 </html>
