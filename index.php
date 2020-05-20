@@ -28,11 +28,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
     
     <!-- CSS  -->
+    <link href="libraries/materialize/materialize.min.css" type="text/css" rel="stylesheet">
+    <link href="libraries/normalize/normalize.css" type="text/css" rel="stylesheet">
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
-    <link href="css/style.min.css" type="text/css" rel="stylesheet" >
+    <link href="css/style-min.css" type="text/css" rel="stylesheet" >
     <script src="https://kit.fontawesome.com/c3ff3e7776.js" crossorigin="anonymous"></script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body id="top" class="scrollspy">
@@ -56,7 +59,7 @@
                     <li><a href="#intro">Who?</a></li>
                     <li><a href="#works">Projects</a></li>
                     <li><a href="#social">Social</a></li>
-                    <li><a href="#anime">Anime</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#friends">Friends</a></li>  
                     <li><a href="#contact">Contact</a></li>
                     <!-- <li><a href="./watch/">Watch</a></li> -->
@@ -65,7 +68,7 @@
                     <li><a href="#intro">Who?</a></li>
                     <li><a href="#works">Projects</a></li>
                     <li><a href="#social">Social</a></li>
-                    <li><a href="#anime">Anime</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#friends">Friends</a></li>  
                     <li><a href="#contact">Contact</a></li>
                     <!-- <li><a href="./watch/">Watch</a></li> -->
@@ -205,7 +208,7 @@
 
 <!--Parallax-->
 <div class="parallax-container">
-    <div class="parallax"><img src="img/parallax1.jpg"></div>
+    <div class="parallax"><img src="img/parallax1.png"></div>
 </div>
 
 <!--Team-->
@@ -267,20 +270,24 @@
 </div>
 
 <div class="parallax-container">
-    <div class="parallax"><img src="img/parallax2.jpg"></div>
+    <div class="parallax"><img src="img/parallax2.png"></div>
 </div>
 
-<div class="section scrollspy" id="anime">
+<div class="section scrollspy" id="gallery">
     <div class="container">
-        <h2 class="header text_b"> Anime List </h2>
-        <div class="row">
-            <div class="container">
-                <a href="https://kitsu.io/users/100chilly/library">
-                    <img class="weeblist" border="0" alt="Kitsu Library" src="./img/Kitsu.png">
-                </a>
-                <p class="weeblisttext white-text">Click the image to be taken to my anime library.</p>
-                </div>
-            </div>
+        <h2 class="header text_b"> Gallery </h2>
+        <div class="carousel carousel-slider" id="imageGallery">
+            <?php
+            $directory = './files/VRChat';
+            $serverPath = '/files/VRChat/';
+            $tagStart = '<a class=\'carousel-item\'><img class=\'imageElement\' src=\'';
+                                                         $tagEnd = '\'></a>';
+            $files = array_diff(scandir($directory), array('..', '.'));
+            foreach($files as $file){
+            echo $tagStart . $serverPath . $file . $tagEnd;
+            }
+
+            ?>
         </div>
     </div>
 </div> 
@@ -342,7 +349,7 @@
 </div>
 
 <div class="parallax-container">
-    <div class="parallax"><img src="img/backimg.png"></div>
+    <div class="parallax"><img src="img/parallax4.png"></div>
 </div>
 
 <!--Footer-->
@@ -399,13 +406,13 @@
 
 
     <!--  Scripts-->
-    <script defer src='js/jquery-3.5.0.min.js'></script>
-    <script defer src='js/jquery-migrate-3.1.0.min.js'></script>
-    <script defer src='js/jquery-ui.min.js'></script>
-    <!--<script defer src="js/materialize.js"></script>-->
-    <!--<script defer src="js/init.js"></script>-->
+    <script defer src="libraries/jquery/jquery-3.5.1.min.js"></script>
+    <script defer src="libraries/materialize/materialize.min.js"></script>
+
     <script defer src="min/plugin-min.js"></script>
-    <script defer src="min/custom-min.js"></script>
+
+    <script defer src="js/init.js"></script>
     <script defer src="js/age.js"></script>
+    <script defer src="js/carousel.js"></script>
     </body>
 </html>
