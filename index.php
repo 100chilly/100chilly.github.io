@@ -101,7 +101,7 @@
     <div class="container">
         <div class="row">
             <div  class="col s12">
-                <h4 class="center header text_h2"> Hi Everyone! My name is Q, or like my friends call me <span class="span_h2">100chilly</span>. I am a <span class="span_h2">Web Developer/Designer</span>, <span class="span_h2">Programmer</span>, and a <span class="span_h2">Gamer.</span></h4>
+                <h4 class="center header text_h2"> Hi Everyone! My name is <span class="span_h2">100chilly</span>. I am a <span class="span_h2">Web Developer/Designer</span>, <span class="span_h2">Programmer</span>, and a <span class="span_h2">Gamer.</span></h4>
                 <h5 class="center text_h2">I've worked on a ton of stuff over the course of <span id="age" class="span_h2">twenty four years</span> on Earth. <span class="span_h2">Below are some of my works, both past and current.</span></h5>
             </div>
         </div>
@@ -178,20 +178,6 @@
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="img/project5.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">CL <i class="mdi-navigation-more-vert right"></i></span>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Closet Lolis<i class="mdi-navigation-close right"></i></span>
-                        <p>A project I was with as Event Team Lead. Closet Lolis is a community created by a few good friends of mine that dedicate their time first and foremost, to lolis. Its a group dedicated to <b>fictional anime characters</b> that are in no way to be lewded/sexualized. The server followed Discord ToS and Guidelines as well as the law. I stepped down as Event Team Lead due to health concerns. The server isn't accepting new people and is decomissioned.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="img/project6.png">
                         </div>
                         <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">MVGD<i class="mdi-navigation-more-vert right"></i></span>
@@ -199,6 +185,20 @@
                         <div class="card-reveal">
                             <span class="card-title grey-text text-darken-4">Mitsue's Video Gaming Den<i class="mdi-navigation-close right"></i></span>
                                 <p>Not really a project, but a general place to gather, chit chat and play some video games. If you wanna drop by, please do @ <a href="http://discord.gg/3t2Gjzy">MVGD's Discord</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="img/project6.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">LPD <i class="mdi-navigation-more-vert right"></i></span>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Loli Police Department<i class="mdi-navigation-close right"></i></span>
+                        <p>Loli Police Department or LPD is an RP group with a focus on light RP and engaging the VRChat community in a fun and postive way. I'm currently a member of this wonderful community as an officer. I joined up in March to get back into the groove of role-playing in a group setting and I've loved every event/patrol I've been a part of. If your thinking of joining or want a pretty cool community to hang out in, head over to the Discord @ <a href="https://discord.gg/LPD">https://discord.gg/LPD</a></p>
                     </div>
                 </div>
             </div>
@@ -336,11 +336,11 @@
                         <img class="activator" src="img/friends3.png">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Isobel Mouse <i class="mdi-navigation-more-vert right"></i></span>
+                        <span class="card-title activator grey-text text-darken-4">KnoxxFox <i class="mdi-navigation-more-vert right"></i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Isobel Mouse (Affiliated Twitch Streamer)<i class="mdi-navigation-close right"></i></span>
-                        <p>Isobel Mouse is another great friend of mine. They are also a <a href="https://vrchat.com/" target="_blank">VRChat</a> streamer. They are eccentric, meme-tastic, and overall wacky person to be around. If you're bored or are curious, I highly recommend you check them out on <a href="https://www.twitch.tv/isobelmouse" target="_blank">Twitch</a> or <a href="https://discord.gg/2y8mZTa" target="_blank">Discord</a>.</p>
+                        <span class="card-title grey-text text-darken-4">KnoxxFox/LunaSkylark (Affiliated Twitch Streamer)<i class="mdi-navigation-close right"></i></span>
+                        <p>KnoxxFox is another great friend of mine. They are mainly a League of Legends streamer. They are eccentric, derpy, and overall chill person to be around. If you're bored or are curious, I highly recommend you check them out on <a href="https://www.twitch.tv/knoxxfox" target="_blank">Twitch</a> or <a href="https://skip.gg/ZoeBotDiscord" target="_blank">Discord</a>.</p>
                     </div>
                 </div>
             </div>

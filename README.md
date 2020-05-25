@@ -10,7 +10,7 @@ My public repository for my personal site. :smiley:
 
 ## Noteworthy contributors
 1. Sava [@andrejsavikin](https://github.com/andrejsavikin) for current contributions.
-2. Kweh [@bstapleton](https://github.com/bstapleton) for past contributions regarding Qubed Q3 and other various projects.
+2. Kweh [@bstapleton](https://github.com/bstapleton) for past contributions regarding Qubed Q3 and other various projects. Some of that code has wiggled over the years into my website.
 
 ### Official Web URLs
 **Recommend https:// but will work with http://**
