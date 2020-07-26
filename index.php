@@ -198,7 +198,7 @@
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Loli Police Department<i class="mdi-navigation-close right"></i></span>
-                        <p>Loli Police Department or LPD is an RP group with a focus on light RP and engaging the VRChat community in a fun and postive way. I'm currently a member of this wonderful community as an corporal. I joined up in March to get back into the groove of role-playing in a group setting and I've loved every event/patrol I've been a part of. If your thinking of joining or want a pretty cool community to hang out in, head over to the Discord @ <a href="https://discord.gg/LPD">https://discord.gg/LPD</a></p>
+                        <p>Loli Police Department or LPD is an RP group with a focus on light RP and engaging the VRChat community in a fun and postive way. I'm currently a member of this wonderful community as a corporal. I joined up in March to get back into the groove of role-playing in a group setting and I've loved every event/patrol I've been a part of. If your thinking of joining or want a pretty cool community to hang out in, head over to the Discord @ <a href="https://discord.gg/LPD">https://discord.gg/LPD</a></p>
                     </div>
                 </div>
             </div>
