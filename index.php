@@ -198,7 +198,7 @@
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Loli Police Department<i class="mdi-navigation-close right"></i></span>
-                        <p>Loli Police Department or LPD is an RP group with a focus on light RP and engaging the VRChat community in a fun and postive way. I'm currently a member of this wonderful community as an officer. I joined up in March to get back into the groove of role-playing in a group setting and I've loved every event/patrol I've been a part of. If your thinking of joining or want a pretty cool community to hang out in, head over to the Discord @ <a href="https://discord.gg/LPD">https://discord.gg/LPD</a></p>
+                        <p>Loli Police Department or LPD is an RP group with a focus on light RP and engaging the VRChat community in a fun and postive way. I'm currently a member of this wonderful community as an corporal. I joined up in March to get back into the groove of role-playing in a group setting and I've loved every event/patrol I've been a part of. If your thinking of joining or want a pretty cool community to hang out in, head over to the Discord @ <a href="https://discord.gg/LPD">https://discord.gg/LPD</a></p>
                     </div>
                 </div>
             </div>
@@ -276,18 +276,8 @@
 <div class="section scrollspy" id="gallery">
     <div class="container">
         <h2 class="header text_b"> Gallery </h2>
-        <div class="carousel carousel-slider" id="imageGallery">
-            <?php
-            $directory = './files/VRChat';
-            $serverPath = '/files/VRChat/';
-            $tagStart = '<a class=\'carousel-item\'><img class=\'imageElement\' src=\'';
-                                                         $tagEnd = '\'></a>';
-            $files = array_diff(scandir($directory), array('..', '.'));
-            foreach($files as $file){
-            echo $tagStart . $serverPath . $file . $tagEnd;
-            }
-
-            ?>
+        <div class="row" id="imageGallery">
+        <iframe src="https://drive.google.com/embeddedfolderview?id=1cRo7PHmmn80ac7g1xByQ9q_KYGk6ohBY#grid" style="width:100%; height:500px; max-width:100%; border:0; position:relative;"></iframe>
         </div>
     </div>
 </div> 

@@ -327,12 +327,12 @@ footer.page-footer {
     height: auto;
 }
 
-#imageGallery .imageElement {
+/* #imageGallery .imageElement {
     position: relative;
     max-width: 100%;
     height: auto;
     width: auto\9;
-}
+} */
 
 /* #imageGallery .imageElement {
     position: relative;
@@ -341,9 +341,9 @@ footer.page-footer {
     width: auto\9;
 } */
 
-.imageElement img {
+/* .imageElement img {
     position: relative;
     max-width: 100%;
     height: auto;
     width: auto\9;
-}
+} */
