@@ -218,7 +218,7 @@
             <div class="container">
                   <div class="card">
                     <div class="card-image">
-                        <img class="activator" src="./img/100chilly.jpg">
+                        <img class="activator" src="./img/100chilly.png">
                     </div>
                 <div class="card-content">
                     <span class="card-title activator black-text">100chilly</span>
