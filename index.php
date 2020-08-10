@@ -262,7 +262,7 @@
                         <p>Has a very bad habit of playing late night Tech Support for people.</p>
                         <p>Tech Nerd for sure.</p>
                         <p>Somewhat shy.</p>
-                        <p>Current avatar credits to <a href="https://www.pixiv.net/en/users/2517274>">침묵소녀 / 沈默少女</a> </p>
+                        <p>Current avatar credits to Notshane of the LPD.</p>
                 </div>
             </div>
         </div>
