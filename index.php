@@ -297,21 +297,6 @@
                         <img class="activator" src="img/friends1.png">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Linkz <i class="mdi-navigation-more-vert right"></i></span>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Linkz (Partnered Twitch Streamer)<i class="mdi-navigation-close right"></i></span>
-                        <p>Linkz is one of my best friends and an inspiration I personally look up to. They created and are surrounded by such an awesome community that I gladly and proudly call home. They mainly stream <a href="https://vrchat.com/" target="_blank">VRChat</a> and rarely, other games. If you feel like learning more information, please see thier <a href="https://www.linkzvr.com/" target="_blank">Personal Website</a> or <a href="https://www.twitch.tv/linkz" target="_blank">Twitch</a>.</p>
-                        <p><a href="https://cdn.discordapp.com/attachments/667539182809513994/689587019961466992/VRChat_1920x1080_2020-03-14_03-01-15.544.png">Original image</a> credits to my friend, Dia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="img/friends2.png">
-                    </div>
-                    <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">AlyCatVR <i class="mdi-navigation-more-vert right"></i></span>
                     </div>
                     <div class="card-reveal">
@@ -323,7 +308,7 @@
             <div class="col s12 m4 l4">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="img/friends3.png">
+                        <img class="activator" src="img/friends2.png">
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">KnoxxFox <i class="mdi-navigation-more-vert right"></i></span>
@@ -331,6 +316,22 @@
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">KnoxxFox/LunaSkylark (Affiliated Twitch Streamer)<i class="mdi-navigation-close right"></i></span>
                         <p>KnoxxFox is another great friend of mine. They are mainly a League of Legends streamer. They are eccentric, derpy, and overall chill person to be around. If you're bored or are curious, I highly recommend you check them out on <a href="https://www.twitch.tv/knoxxfox" target="_blank">Twitch</a> or <a href="https://skip.gg/ZoeBotDiscord" target="_blank">Discord</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="img/friends3.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Archangelion and DragonsFae <i class="mdi-navigation-more-vert right"></i></span>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Archangelion and DragonsFae (Affiliated Twitch Streamers)<i class="mdi-navigation-close right"></i></span>
+                        <p>Archangelion and DragonsFae I happend to met on my first day of being a corporal in the LPD and we've been friends ever since. I found out later that they were streamers. They are both vareity streamers over on Twitch.</p>
+                        <p><a href="https://www.twitch.tv/archangelion" target="_blank">Archangelion's Twitch channel</a></p>
+                        <p><a href="https://www.twitch.tv/dragonsfae" target="_blank">DragonFae's Twitch channel</a></p>
                     </div>
                 </div>
             </div>
