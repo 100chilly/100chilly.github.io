@@ -87,7 +87,6 @@
             <span class="cd-words-wrapper waiting">
                 <b class="is-visible">video games.</b>
                 <b>anime.</b>
-                <b>visual novels.</b>
                 <b>designing websites.</b>
                 <b>helping others.</b>
                 <b>creating communities.</b>
@@ -297,11 +296,11 @@
                         <img class="activator" src="img/friends1.png">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">AlyCatVR <i class="mdi-navigation-more-vert right"></i></span>
+                        <span class="card-title activator grey-text text-darken-4">TomBoyVR <i class="mdi-navigation-more-vert right"></i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">AlyCatVR (Affiliated Twitch Streamer)<i class="mdi-navigation-close right"></i></span>
-                        <p>AlyCatVR is a great friend of mine. They are also a <a href="https://vrchat.com/" target="_blank">VRChat</a> streamer. They are fun, wacky, and overall great person to be around. If you're bored or are curious, I highly recommend you check them out on <a href="https://www.twitch.tv/alycatvr" target="_blank">Twitch</a> or <a href="https://discord.gg/wmZ9DVa" target="_blank">Discord</a>.</p>
+                        <span class="card-title grey-text text-darken-4">TomboyVR (Affiliated Twitch Streamer)<i class="mdi-navigation-close right"></i></span>
+                        <p>TomboyVR is a great friend of mine. They are also a <a href="https://vrchat.com/" target="_blank">VRChat</a> streamer. They are fun, wacky, and overall great person to be around. If you're bored or are curious, I highly recommend you check them out on <a href="https://www.twitch.tv/TomboyVR" target="_blank">Twitch</a> or <a href="https://discord.gg/Rcenfwg" target="_blank">Discord</a>.</p>
                     </div>
                 </div>
             </div>
