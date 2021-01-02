@@ -295,11 +295,11 @@
                         <img class="activator" src="img/friends1.png">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">TomBoyVR <i class="mdi-navigation-more-vert right"></i></span>
+                        <span class="card-title activator grey-text text-darken-4">DwelFlowVR <i class="mdi-navigation-more-vert right"></i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">TomboyVR (Affiliated Twitch Streamer)<i class="mdi-navigation-close right"></i></span>
-                        <p>TomboyVR is a great friend of mine. They are also a <a href="https://vrchat.com/" target="_blank">VRChat</a> streamer. They are fun, wacky, and overall great person to be around. If you're bored or are curious, I highly recommend you check them out on <a href="https://www.twitch.tv/TomboyVR" target="_blank">Twitch</a> or <a href="https://discord.gg/Rcenfwg" target="_blank">Discord</a>.</p>
+                        <span class="card-title grey-text text-darken-4">DwelFlowVR (Twitch Streamer)<i class="mdi-navigation-close right"></i></span>
+                        <p>Dwel is a friend of mine who streams over on <a href="https://www.twitch.tv/dwelflowvr" target="_blank">Twitch</a>. They are... a very unique person. They have created such an awesome and wacky community on Twitch and Discord. If you want to check them out, see their <a href="https://twitter.com/DwelVR" target="_blank">Twitter</a> or <a href="https://discord.gg/VGseebX" target="_blank">Discord</a>.</p>
                     </div>
                 </div>
             </div>
@@ -312,7 +312,7 @@
                         <span class="card-title activator grey-text text-darken-4">KnoxxFox <i class="mdi-navigation-more-vert right"></i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">KnoxxFox/LunaSkylark (Affiliated Twitch Streamer)<i class="mdi-navigation-close right"></i></span>
+                        <span class="card-title grey-text text-darken-4">KnoxxFox/LunaSkylark (Twitch Streamer)<i class="mdi-navigation-close right"></i></span>
                         <p>KnoxxFox is another great friend of mine. They are mainly a League of Legends streamer. They are eccentric, derpy, and overall chill person to be around. If you're bored or are curious, I highly recommend you check them out on <a href="https://www.twitch.tv/knoxxfox" target="_blank">Twitch</a> or <a href="https://skip.gg/ZoeBotDiscord" target="_blank">Discord</a>.</p>
                     </div>
                 </div>
@@ -326,7 +326,7 @@
                         <span class="card-title activator grey-text text-darken-4">Archangelion and DragonsFae <i class="mdi-navigation-more-vert right"></i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Archangelion and DragonsFae (Affiliated Twitch Streamers)<i class="mdi-navigation-close right"></i></span>
+                        <span class="card-title grey-text text-darken-4">Archangelion and DragonsFae (Twitch Streamers)<i class="mdi-navigation-close right"></i></span>
                         <p>Archangelion and DragonsFae I happend to met on my first day of being a corporal in the LPD and we've been friends ever since. I found out later that they were streamers. They are both vareity streamers over on Twitch.</p>
                         <p><a href="https://www.twitch.tv/archangelion" target="_blank">Archangelion's Twitch channel</a></p>
                         <p><a href="https://www.twitch.tv/dragonsfae" target="_blank">DragonFae's Twitch channel</a></p>
@@ -357,7 +357,7 @@
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Byakko (Content Creator)<i class="mdi-navigation-close right"></i></span>
-                        <p>Byakko is an adorable mute celestial white tiger and a friend of mine who streams over on <a href="https://www.twitch.tv/byakko_chan" target="_blank">Twitch</a>. Cute and adorable as they are, they always put a smile on my face. If you want to check them out, see their <a href="https://twitter.com/ByakkoMedia" target="_blank">Twitter</a> or <a href="https://discord.gg/MtZfD67" target="_blank">Discord</a>.</p>
+                        <p>Byakko is an adorable celestial white tiger and a friend of mine who streams over on <a href="https://www.twitch.tv/byakko_chan" target="_blank">Twitch</a>. Cute and adorable as they are, they always put a smile on my face. If you want to check them out, see their <a href="https://twitter.com/ByakkoMedia" target="_blank">Twitter</a> or <a href="https://discord.gg/MtZfD67" target="_blank">Discord</a>.</p>
                     </div>
                 </div>
             </div>
@@ -367,11 +367,11 @@
                         <img class="activator" src="img/friends6.png">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">VRLinux <i class="mdi-navigation-more-vert right"></i></span>
+                        <span class="card-title activator grey-text text-darken-4">JonsAtWar <i class="mdi-navigation-more-vert right"></i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">VRLinux (Content Creator)<i class="mdi-navigation-close right"></i></span>
-                        <p>VRLinux a Linux gamer and a friend of mine who streams over on <a href="https://www.twitch.tv/vrlinux" target="_blank">Twitch</a>. Their goal is to prove that Linux can play VR Games just as well as Windows. If you want to check them out, see their <a href="https://twitter.com/VRLinux" target="_blank">Twitter</a> or <a href="https://discord.gg/jTuA4tw" target="_blank">Discord</a>.</p>
+                        <span class="card-title grey-text text-darken-4">JonsAtWar (Twitch Streamer)<i class="mdi-navigation-close right"></i></span>
+                        <p>Jonathan is a friend of mine who streams over on <a href="https://www.twitch.tv/jonsatwar" target="_blank">Twitch</a>. They are former army, a father, and a friend. They also stream for <a href="https://www.stackup.org/" target="_blank">Stack Up</a>, a really cool military charity (check them out as well). If you want to check Jonathan out, see their <a href="https://twitter.com/JonsAtWar" target="_blank">Twitter</a> or <a href="https://bit.ly/wardiscord" target="_blank">Discord</a>.</p>
                     </div>
                 </div>
             </div>
