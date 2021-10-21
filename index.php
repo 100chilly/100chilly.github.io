@@ -61,7 +61,7 @@
                     <li><a href="#social">Social</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#friends">Friends</a></li>  
-                    <li><a href="#contact">Contact</a></li>
+                    <!-- <li><a href="#contact">Contact</a></li> -->
                     <!-- <li><a href="./watch/">Watch</a></li> -->
                 </ul>
                 <ul id="nav-mobile" class="side-nav">
@@ -70,7 +70,7 @@
                     <li><a href="#social">Social</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#friends">Friends</a></li>  
-                    <li><a href="#contact">Contact</a></li>
+                    <!-- <li><a href="#contact">Contact</a></li> -->
                     <!-- <li><a href="./watch/">Watch</a></li> -->
                 </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="importanttext mdi-navigation-menu"></i></a>
@@ -193,11 +193,11 @@
                         <img class="activator" src="img/project6.png">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">LPD <i class="mdi-navigation-more-vert right"></i></span>
+                        <span class="card-title activator grey-text text-darken-4">Cyber Radiation <i class="mdi-navigation-more-vert right"></i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Loli Police Department<i class="mdi-navigation-close right"></i></span>
-                        <p>Loli Police Department or LPD is an RP group with a focus on light RP and engaging the VRChat community in a fun and postive way. I'm currently a member of this wonderful community as a corporal. I joined up in March to get back into the groove of role-playing in a group setting and I've loved every event/patrol I've been a part of. If your thinking of joining or want a pretty cool community to hang out in, head over to the Discord @ <a href="https://discord.gg/LPD">https://discord.gg/LPD</a></p>
+                        <span class="card-title grey-text text-darken-4">Cyber Radiation<i class="mdi-navigation-close right"></i></span>
+                        <p>Cyber Radiation is a VRChat Club I work for and partner with. We're a pretty tight knit group of individuals that enjoy eachother's company and enjoy meeting likeminded people. We have SFW and NSFW events every week with new folks joining here and there. If your thinking of joining or want a pretty cool community to hang out in, head over to the Discord @ <a href="https://discord.gg/uzZ3pmS">https://discord.gg/uzZ3pmS</a></p>
                     </div>
                 </div>
             </div>
