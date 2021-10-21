@@ -342,7 +342,7 @@
                         <span class="card-title activator grey-text text-darken-4">Nana <i class="mdi-navigation-more-vert right"></i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">NanaDragonLoli (VRChat Content Creator)<i class="mdi-navigation-close right"></i></span>
+                        <span class="card-title grey-text text-darken-4">NanaDragon (VRChat Content Creator)<i class="mdi-navigation-close right"></i></span>
                         <p>Nana is a friend of mine who creates adorable and funny vrchat clips/content. They're such an adorable ball of dragon energy and always seem to be doing their best. If you want to check them out, see their <a href="https://twitter.com/NanaDragonLoli" target="_blank">Twitter</a>.</p>
                     </div>
                 </div>
@@ -353,11 +353,11 @@
                         <img class="activator" src="img/friends5.png">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Byakko <i class="mdi-navigation-more-vert right"></i></span>
+                        <span class="card-title activator grey-text text-darken-4">Byakko Howaito <i class="mdi-navigation-more-vert right"></i></span>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Byakko (Content Creator)<i class="mdi-navigation-close right"></i></span>
-                        <p>Byakko is an adorable celestial white tiger and a friend of mine who streams over on <a href="https://www.twitch.tv/byakko_chan" target="_blank">Twitch</a>. Cute and adorable as they are, they always put a smile on my face. If you want to check them out, see their <a href="https://twitter.com/ByakkoMedia" target="_blank">Twitter</a> or <a href="https://discord.gg/MtZfD67" target="_blank">Discord</a>.</p>
+                        <span class="card-title grey-text text-darken-4">Byakko Howaito (Content Creator)<i class="mdi-navigation-close right"></i></span>
+                        <p>Byakko is an adorable celestial white tiger and a friend of mine who streams over on <a href="https://www.twitch.tv/ByakkoHowaito" target="_blank">Twitch</a>. Cute and adorable as they are, they always put a smile on my face. If you want to check them out, see their <a href="https://twitter.com/ByakkoMedia" target="_blank">Twitter</a> or <a href="https://discord.gg/byakkohowaito" target="_blank">Discord</a>.</p>
                     </div>
                 </div>
             </div>
